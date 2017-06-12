@@ -1,0 +1,540 @@
+%% Based on a TeXnicCenter-Template by Gyorgy SZEIDL.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------
+%
+\documentclass{article}%
+%Options -- Point size:  10pt (default), 11pt, 12pt
+%        -- Paper size:  letterpaper (default), a4paper, a5paper, b5paper
+%                        legalpaper, executivepaper
+%        -- Orientation  (portrait is the default)
+%                        landscape
+%        -- Print size:  oneside (default), twoside
+%        -- Quality      final(default), draft
+%        -- Title page   notitlepage, titlepage(default)
+%        -- Columns      onecolumn(default), twocolumn
+%        -- Equation numbering (equation numbers on the right is the default)
+%                        leqno
+%        -- Displayed equations (centered is the default)
+%                        fleqn (equations start at the same distance from the right side)
+%        -- Open bibliography style (closed is the default)
+%                        openbib
+% For instance the command
+%           \documentclass[a4paper,12pt,leqno]{article}
+% ensures that the paper size is a4, the fonts are typeset at the size 12p
+% and the equation numbers are on the left side
+%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{subfigure,float,wrapfig}
+
+\usepackage{listings}
+\usepackage{color}
+\graphicspath{ {./images/} }
+
+\lstset{keywordstyle=\color{blue}, breaklines=true, language=Python}
+
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+% ------ GRADING COMMANDS ------ %
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\definecolor{dkgreen}{rgb}{0, 0.75, 0}
+\definecolor{dkred}{rgb}{0.5, 0, 0}
+\definecolor{dkpurp}{rgb}{0.25, 0, 0.5}
+\newcommand{\add}[1]{\textcolor{dkgreen}{#1}}
+\newcommand{\rmv}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\moveto}[1]{\textcolor{blue}{#1}}
+\newcommand{\movefrom}[1]{\textcolor{blue}{\sout{#1}}}
+\newcommand{\highlighttext}[1]{\colorbox{yellow}{#1}}
+\newenvironment{added}{\color{dkgreen}}{\color{black}}
+\newenvironment{removed}{\color{red}}{\color{black}}
+\newenvironment{edited}{\color{blue}}{\color{black}}
+
+\begin{document}
+
+\begin{flushleft}
+\textbf{Course:} CSC591/791, Graph Data Mining: Theory, Algorithms, and Applications\\
+\textbf{Final Exam}: Comprehensive, home-take exam.\\
+\textbf{STUDENT's ID:} \textbf{avshirod} % \rule{2 in}{1 pt} % \\
+\end{flushleft}
+
+
+\noindent{\hrulefill}
+
+\bigskip
+This exam is intended to be an \textbf{individual} effort.  You are allowed to use and reference the materials posted on Moodle, cited in the exam, your homework assignments, your notes, the class slides, and the lecture assignments. You are \textbf{NOT} allowed to use the other sources, such as your classmates and the internet at large.
+
+\begin{center}
+\begin{enumerate}
+	\item Good luck!
+	\item You get BONUS 5 points if your solution is in LaTeX (both source and PDF)
+	\item Otherwise, a PDF (even a scanned hand-written solution) must be uploaded into Moodle
+	\item The Total Exam Score by the TA:  \rule{0.5 in}{1 pt} out of \textbf{(100 points)}
+\end{enumerate}
+\end{center}
+
+\noindent{\hrulefill}
+
+\bigskip
+\textit{From the NCSU Code of Student Conduct:}
+
+\section*{DEFINITIONS OF ACADEMIC DISHONESTY}
+\begin{enumerate}
+\item Academic dishonesty is the giving, taking, or presenting of information or material by a student that unethically or fraudulently aids oneself or another on any work which is to be considered in the determination of a grade or the completion of academic requirements or the enhancement of that student's record or academic career.
+
+\item A student shall be guilty of a violation of academic integrity if he or she:
+\begin{itemize}
+\item represents the work of others as his or her own;
+\item obtains assistance in any academic work from another individual in a situation in which the student is expected to perform independently;
+\item gives assistance to another individual in a situation in which that individual is expected to perform independently;
+\item offers false data in support of laboratory or field work.
+\end{itemize}
+\item The act of submitting work for evaluation or to meet a requirement is regarded as assurance that the work is the result of the student's own thought and study, produced without assistance, and stated in that student's own words, except as quotation marks, references, or footnotes acknowledge the use of other sources. Submission of work used previously must first be approved by the instructor.
+
+\item Regulations regarding academic dishonesty are set forth in writing in order to give students general notice of prohibited conduct. They should be read broadly and are not designed to define academic dishonesty in exhaustive terms.
+
+\item If a student is in doubt regarding any matter relating to the standards of academic integrity in a given course or on a given assignment, that student shall consult with the faculty member responsible for the course before presenting the work.
+\end{enumerate}
+
+By signing this exam, the student acknowledges the above terms and agrees to abide by NCSU policies on academic integrity.
+
+\bigskip
+\noindent Agreed: \textit{avshirod} % \rule{1in}{1pt} (specify your ID) %
+\hspace{\fill} Date: \textit{December 1st, 2016} % \rule{0.75in}{1pt}%
+
+
+\newpage
+\begin{enumerate}
+
+%---------- PROBLEM 1 --------------
+	\item \rule{0.5 in}{1 pt} out of \textbf{(15 points)}: Given an infectious disease following the SIS virus propagation model with transmission probability $\beta=0.3$ and healing probability $\delta=0.5$, in a contact network with 10 nodes and the following edges: \{(0, 1), (0, 3), (1, 4), (2, 3), (2, 6), (5, 6), (5, 7), (6, 7), (7, 9), (8, 9)\}, answer:
+	\begin{enumerate}
+	\item \rule{0.5 in}{1 pt} out of \textbf{(1 point)}: What is the spectral radius of the network?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(1 point)}: What is the effective strength of the virus?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(1 point)}: According to the theorem studied in class [1], can the infection result in an epidemic?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(9 points)}: Using the NetShield algorithm [2], which 3 nodes should be immunized to minimize the spread of the infection?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(3 points)}: After immunizing the 3 nodes selected in (4), can the infection result in an epidemic?
+	\end{enumerate}
+	
+\textbf{References:}	
+\begin{itemize}
+	\item [1] B. A. Prakash, D. Chakrabarti, M. Faloutsos, N. Valler, C. Faloutsos. Got the Flu (or Mumps)? Check the Eigenvalue! arXiv:1004.0060 [physics.soc-ph], 2010.
+	\item [2] H. Tong, B. A. Prakash, C. Tsourakakis, T. Eliassi-Rad, C. Faloutsos, D. H. Chau. On the Vulnerability of Large Graphs. In ICDM, 2010.
+\end{itemize}
+
+
+\textbf{Ans:} \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.15]{q1.png}
+\caption{Visualizing the SIS network graph}
+\end{figure}
+VPM - SIS \\
+$ \beta = 0.3 $ \hspace{1cm} \# Nodes $ n = 10 $ \\
+$ \delta = 0.5 $ \hspace{1cm} \# Edges $ e = 10 $
+\begin{enumerate}
+\item Spectral Radius = 2.373 \hspace{1cm} (Max eigenvalue of AdjMat - $\lambda_1$)
+\item Effective Strength \\ $ S = \lambda_1 * C_{VPM} = \lambda_1 * \frac{\beta}{\delta} = 2.373 * \frac{0.3}{0.5} = 1.4238 $
+\item 	Epidemic? \\
+		As effective strength $ S = 1.4238 > 1 $, \\ $ \therefore $ Epidemic.
+\item 3 nodes that should be immunized to minimize the spread of the infection, as per \textit{NetShield} algorithm $ = \{6, 7, 5\} $
+\item 	Vaccinate above nodes. Epidemic now? \\
+		$\lambda_1 $ of modified graph $ = 1.732 $ \\
+		$ S = \lambda_1 * C_{VPM} = 1.732 * 0.6 = 1.0392 > 1 $ \\
+		$ \therefore $ Still Epidemic.
+\end{enumerate}
+
+\textit{NOTE:} \\
+Although the NetShield algorithm implemented below is giving nodes $[6,7,5]$ as the output, it is not the optimum output (because it does not stop the epidemic. \\
+If we vaccinate nodes $[6,7,0]$ instead, then we get eigenvalue as $1$ and $S = 0.6 < 1$. And we'll be able to stop the epidemic. \\
+\hspace{1cm} \\
+\lstinputlisting[caption=Code for NetShield Algorithm]{q1.py}
+
+
+\newpage
+
+%---------- PROBLEM 2 --------------
+\item \rule{0.5 in}{1 pt} out of \textbf{(15 points)}: Given random variables $x, y, w, z$, \textbf{prove or disprove} the following statements about their conditional independence ($\bot$) relationships (see the lecture on $D$-separation and example below; if you decide to disprove the stmt, then a counter-example of a DAG will suffice):
+	\begin{enumerate}
+	\item \rule{0.5 in}{1 pt} out of \textbf{(0 points)}: Example: $(x \bot y, w | z) \Longrightarrow (x \bot y | z)$\\
+	\textbf{Proof:} 
+\[\begin{array}{l}
+p(x,y | z) = \sum\limits_w {p(x,y,w|z) = } \sum\limits_w {p(x|z)p(y,w|z) = } \\
+p(x|z)\sum\limits_w {p(y,w|z) = } p(x|z)p(y|z)
+\end{array}\]
+
+	\item \rule{0.5 in}{1 pt} out of \textbf{(6 points)}: $(x \bot y, z) \& (x, y \bot w | z) \Longrightarrow (x \bot w | z)$\\
+	
+%-------------------------
+	\item \rule{0.5 in}{1 pt} out of \textbf{(9 points)}: $(x \bot y, z) \& (x \bot y | w) \Longrightarrow (x \bot y | z, w)$\\
+	
+	\end{enumerate}
+
+\textbf{Ans:} \\
+\begin{enumerate}
+\item Proved.
+\item \textbf{TPT:} $(x \bot y, z) \& (x, y \bot w | z) \Longrightarrow (x \bot w | z)$
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{q2_b.png}
+\end{figure} \\
+\begin{align}
+x \bot y, z & \Longrightarrow P(x | y,z) = P(x) \\
+x, y \bot w | z & \Longrightarrow P(x, y | w, z) = P(x, y | z)
+\end{align}
+
+Now,
+\begin{align*}
+P(x | w, z) & = \sum_{y} P(x, y | w, z) \text{\hspace{0.6cm} Introducing sum over 'y'}\\
+& = \sum_{y} P(x, y | z) \text{\hspace{1.1cm} from (1) }\\
+& = P(x | z) \text{\hspace{2cm} from (2) }
+\end{align*}
+
+$\therefore x \bot w | z $
+
+\item \textbf{TPT:} $(x \bot y, z) \& (x \bot y | w) \Longrightarrow (x \bot y | z, w)$ \\
+\setcounter{equation}{0}
+\begin{align}
+x \bot y, z & \Longrightarrow P(x | y, z) = P(x) \\
+x \bot y | w & \Longrightarrow P(x | y, w) = P(x | w) 
+\end{align}
+
+Now consider the following graph -
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{q2_c.png}
+\end{figure} \\
+In above graph, the second condition does not hold True, as not all paths from $ x$ to $y$ go through $w$ $(x - z - y)$.
+
+$\therefore$ \textit{Disproved.}
+\end{enumerate}
+
+
+\newpage
+
+%---------- PROBLEM 3 --------------
+  \item \rule{0.5 in}{1 pt} out of (\textbf{15 points}): Suppose you need to design an efficient algorithm for analysizing random walks of an undirected simple graph $G$. Let $A$ be its adjacency matrix with Singular Valude Decomposition (SVD) $A=U\Lambda{U^t}$.
+		\begin{enumerate}
+		\item \rule{0.5 in}{1 pt} out of \textbf{(5 points)}: Prove that the power matrix ${A^k} = U{\Lambda^k}{U^t}$. \\
+		
+		\item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: Devise an efficient algorithm to compute $A^k$ for different values of $k$. What is its Big-O complexity?
+		\end{enumerate}
+			
+\textbf{Ans:} \\
+Random walks on Undirected Simple Graphs. \\
+$ A = $ Adj Matrix \\
+$ A = U{\Lambda}{U^t}$ \\
+
+$A$ is a symmetric matrix $\implies A = A^T $.\\
+Also, A is a positive, semi-definite matrix $\implies $ all $\lambda_i$ are real and $\lambda_i \geq 0 $
+\begin{enumerate}
+\item Prove: $ A^k = U{\Lambda^k}{U^t}$ \\
+
+As $U$ and $U^T$ are orthonormal matrices, (SVD property)\\
+$\therefore$ $U*U^T = I$ (Also $U^T*U=I$). \\
+
+For $k=2$,
+\begin{align*}
+A^2 = A*A 	&= U \Lambda U^T * U \Lambda U^T \\
+			&= U \Lambda I \Lambda U^T \\
+\therefore A^2 &= U \Lambda^2 U^T
+\end{align*}
+
+Similarly for $k=3$,
+\begin{align*}
+A^3 = A^2*A 	&= U \Lambda^2 U^T * U \Lambda U^T \\
+				&= U \Lambda^2 I \Lambda U^T \\
+\therefore A^3 	&= U \Lambda^3 U^T
+\end{align*}
+
+By induction, we can say that - \\
+$ A^k = U{\Lambda^k}{U^t}$ \\
+
+\newpage
+\item  A pseudo code for the algorithm is as follows - \\
+\lstinputlisting[caption = An efficient algorithm to compute $A^k$]{q3.py}
+
+As $A$ is a symmetric square matrix, and it represents an undirected simple graph (with no cycles or self loops), we can mathematically see that, powers of $A$ are scalar multiples of either $A$ or $A^2$. \\
+After computing powers of $A$ upto $A^8$ for some random examples, it was observed that if $k$ is even, then $A^k = 2^{k/2} * A^2$. \\
+Otherwise (when $k$ is odd), $A^k = 2^{(k-1)/2} * A$.\\
+
+If $k$ is even, then we have to compute $A*A$, which is a matrix multiplication of nxn size matrix. So the overall complexity of the algorithm is $O(n^{2.371}) $ (using Strassen's modified algorithm for matrix multiplication). \\
+But as $k \xrightarrow{} n$, the general algorithm will have a complexity of $O(n^{3.371})$, but the algorithm presented above will requires the same amount of time.
+\end{enumerate}
+
+
+\newpage 
+
+%---------- PROBLEM 4 --------------
+  \item \rule{0.5 in}{1 pt} out of (\textbf{10 points}): Let $G$ be an undirected complete bi-partitie graph. Prove that if $\lambda$ is an eigenvalue of its adjacency matrix then $-\lambda$ is also its eigenvalue. Hint: Assume that after the permutation of rows and columns, the adjacency matrux is of the form:
+	\[A = \left( {\begin{array}{*{20}{c}}
+	0&B\\
+	{{B^t}}&0
+	\end{array}} \right)\]
+
+\textbf{Ans:}\\
+G: Undirected Complete Bi-partite graph \\
+A: Adjacency matrix \\
+For a complete undirected bi-partite graph G $(K_{m,n})$, the adjacency matrix would look like - \\
+	\[A = \left( {\begin{array}{*{20}{c}}
+	0&B\\
+	{{B^t}}&0
+	\end{array}} \right)\]
+The dimensions of $B$ would be $(m,n)$. \\
+
+As told in lecture on graph spectra (Lecture \#08), the graph spectra for such a graph is = $ \pm \sqrt{m*n} $. \\
+with all others eigenvalues zero except $\lambda_{max}$ and $\lambda_{min}$. \\
+
+Let's assume we have $\lambda$ as one eigenvalue of $A$. \\
+Now, as $G$ is undirected bi-partite, all the eigenvalues must sum up to zero. ($Trace(A) = 0$).\\
+$\therefore$ The sum of the rest of the eigenvalues must be equal to $-\lambda$. \\
+
+As the two elements in adjacency matrix $A$ are symmetric ($B$ and $B^T$), we can see that there will be two distinct eigenvalues, and the rest will be zero. \\
+Now, as one of the eigenvalues is $\lambda$ (fixed because of our assumption), there remains only one other distinct value. And as the eigenvalues should sum up to zero, it has to be $-\lambda$.
+
+
+\newpage
+
+%----------- PROBLEM 5 ----------------
+  \item \rule{0.5 in}{1 pt} out of (\textbf{20 points}): Consider the following training examples:
+
+   \begin{center}
+   \small
+   \begin{tabular}{|c|ccc|c|} \hline
+   Instance & $x_1$ & $x_2$ & $x_3$ & class, $y$ \\ \hline
+   1 & T & T & T & + \\
+   2 & T & T & T & + \\
+   3 & F & F & T & + \\
+   4 & F & T & F & - \\
+   5 & T & F & T & - \\
+   6 & T & F & F & - \\
+   7 & F & F & F & - \\
+   8 & F & T & F & - \\ \hline
+   \end{tabular}
+   \normalsize
+   \end{center}
+
+    \begin{enumerate}
+    \item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: 
+				You will be using a na\"ive Bayes classifier for this question.
+        Given a test example with attributes $x_1 = T$, $x_2 =
+        T$, and $x_3 = F$, which class will be assigned to this test
+        example? Show your work clearly.
+        
+    \item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: 
+        Repeat the question in part (a) using the following Bayesian Belief
+        network as the classifier:
+\[{x_3} \to {x_2} \to y \to {x_1}\]
+    \end{enumerate}
+
+\textbf{Ans:} \\
+\begin{enumerate}
+\item $x : x_1, x_2, x_3$ \hspace{2cm} $ n=8 $ \\
+$y : +, -$ \\
+$P(x_1 = T, x_2 = T, x_3 = F, y = +) = ? $ \\
+Let's assume value of $y$ to be $+$. \\
+
+
+
+\begin{align*}
+P(y=+) &= 3/8 = 0.375 \\
+P(y=-) &= 5/8 = 0.625 \\\\
+P(x_1=T, y=+) 	& = P(y=+) * P(x_1=T | y=+) \\
+				& = 0.375 * 2/3 = 0.250 \\\\
+P(x_2=T, y=+)	& = P(y=+) * P(x_2=T | y=+) \\
+				& = 0.375 * 2/3 = 0.250 \\\\
+P(x_3=T, y=+) 	& = P(y=+) * P(x_3=F | y=+) \\
+				& = 0.375 * 0 = 0
+\end{align*}
+
+Now, the probability of observed data = 1. \\
+$\therefore P(x_1=T, x_2=T, x_3=F) = 1 $
+\begin{align*}
+P(y=+ | x_1 = T, x_2 = T, x_3 = F) & = \frac{P(x_1=T, x_2=T, x_3=F, y=+)}{P(x_1=T, x_2=T, x_3=F)} \\
+& = P(y=+) * P(x_1=T, x_2=T, x_3=F | y=+) \\
+& = P(y=+) * P(x_1=T|y=+) * \\
+& \hspace{0.5cm} P(x_2=T|y=+) * P(x_3=F|y=+) \\
+& = 0.375 * 0.250 * 0.250 * 0 \\
+& = 0
+\end{align*}
+
+$\therefore P(y=+ | T,T,F) = 0 \\
+\therefore P(y=-| T,T,F) = 1 $
+
+$\therefore$ Classify as $y = '-'$. \\
+
+\item
+$ P(y|x_3=F, x_2=T, x_1=T) = ?$ \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{q5_b.png}
+\end{figure}
+
+Let $ X : x_3 = F, x_2 = T, x_1 = T$ \\
+We know that $P(X) = 1$, as it is observed. \\
+
+Now,
+\begin{align*}
+P(y=+|X) &= \frac{P(y=+, X)}{P(X)} \\
+&= P(x_3 = F) P(x_2 = T|x_3=F) P(y=+|x_2 = T) P(x_1 = T|y=+) \\
+&= 4/8 * 2/4* 2/4 * 2/3 = 1/12\\
+&= 0.0833\\
+& \\ 
+P(y=-|X) &= \frac{P(y=-,X}{X} \\
+&= P(x_3 = F) P(x_2 = T|x_3 = F) P(y = -|x_2 = T) P(x_1 = T|y = -) \\
+&= 4/8 * 2/4 * 2/4 * 2/5 = 1/20\\
+&= 0.05
+\end{align*}
+
+As $P(y=+ | X) > P(y=-|X)$, classify as '$+$'.
+
+\end{enumerate}
+
+\newpage
+
+% ----------------PROBLEM 6-----------------
+ \item \rule{0.5 in}{1 pt} out of (\textbf{10 points}): Show the key steps of the Junction Tree algorithm for the following DAG (Note: No need to show the details of the last step, i.e., the Belief Propagation inference step): 
+\[A \to T \to E\to D; S \to L \to E\to X; S \to B \to D\]
+
+\textbf{Ans:} \\
+
+\begin{center}
+Junction Tree Algorithm
+\end{center}
+
+\begin{enumerate}
+\item Start with DAG \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{q6_step1.png}
+\end{figure}
+
+\item Convert DAG $\rightarrow$ Undirected Graph (with Moralization) \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{q6_step2.png}
+\end{figure}
+
+\item Triangulation \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{q6_step3.png}
+\end{figure} \\
+Cycle with more than $3$ nodes = $S-B-E-L-S$ \\
+Converted to a triangle by adding edge $B-L$. 
+
+\item Find cliques
+\begin{align*}
+c_1 &= A,T \\
+c_2 &= T,E,L \\
+c_3 &= E,X \\
+c_4 &= S,L,B \\
+c_5 &= E,D,B \\
+c_6 &= E,L,B
+\end{align*}
+
+\item Create a junction tree \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{q6_step5.png}
+\end{figure}
+\end{enumerate}
+
+\newpage
+
+% ----------------PROBLEM 7-----------------
+\item \rule{0.5 in}{1 pt} out of (\textbf{15 points}): Using the Maximum Likelihood estimation, find the parameters for the following Bernoulli Trials problem (show all the derivations):\\
+INPUT: 
+\begin{itemize}
+	\item $M$ iid coin flips: $D={H, H, T, H,...}$
+	\item Model: $p(H) = \theta$ and $p(T)=1-\theta$
+\end{itemize}
+OUTPUT: $\theta _{ML}^* $
+\begin{enumerate}
+		\item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: What is the likelihood function $l(\theta; D)=\log p(D|\theta)$? (Hint: Introduce a random variable $x$ that is equal to 1 if the trial is a Head and it is equal to zero if the trial is a Tail.) 
+		
+
+		\item \rule{0.5 in}{1 pt} out of \textbf{(5 points)}: What is $\theta _{ML}^* $?\\
+	\end{enumerate}
+
+\textbf{Ans:}
+
+MLE - Bernoulli trials \\
+i/p: 'M' \texttt{i.i.d.} coin flips \\
+\hspace{1cm} $D = H,H,T,H$ \\
+model: $P(H)=\theta$ and $P(T)=1-\theta$ \\
+o/p : $\theta_{ML}^*$ \\
+
+\begin{enumerate}
+\item
+For Bernoulli trials, \\
+$ f(x) = p^x * (1-p)^(1-x) $ \\
+$ x = 0,1 $ \\
+
+Converting $ D = H,H,T,H,..... \rightarrow D = x_1, x_2, ..., x_m $ \\
+by assuming 		$x_i = 1$ if $D_i = H $ \\
+and \hspace{1.25cm}	$x_i = 0$ if $D_i = T $ \\
+$\therefore D_{new} = 1,1,0,1,...$
+
+Now, based on assumptions above - \\
+\begin{align*}
+P(\theta|x) &= \theta^{x_1} (1-\theta)^{1-x_1} .... \theta^{x_m} (1-\theta)^{1-x_n} \\
+&= \theta^{x_1+....+x_m} (i-\theta)^{n-(x_1+....+x_m)}
+\end{align*}
+
+\begin{align*}
+\ln{L(\theta|x)} = \log{P(\theta|D)} &= \ln{\theta} \sum_{i=1}^M{x_i} + \ln{(1-\theta)(n*\sum_{i=1}^M{x_i})} \\
+&= n \bar{x} \ln{\theta} + n (1-\bar{x}) \ln{1-\theta}
+\end{align*}
+
+
+\item
+To find $\theta^*_{ML}$, taking partial derivative wrt $\theta$, - 
+\begin{align*}
+\frac{\partial \ln{L(\theta|x)}}{\partial \theta} &= n \left( \frac{\bar{x}}{\theta} + \frac{1-\bar{x}}{1-\theta} \right) = 0 \\
+\therefore \frac{\bar{x}}{\theta} &= \frac{1-\bar{x}}{1-\theta} \\
+\therefore \bar{x} - \bar{x} \theta &= \theta - \bar{x} \theta \\
+\therefore \theta^* &= \bar{x}
+\end{align*}
+
+Since $x = 0,1$,\\
+taking average/mean gives us the probability $\theta$ for $x=H$,\\
+and \hspace{5.5cm} $1-\theta$ for $x=T$. \\
+
+Intuitively, say for $M=5$,
+\begin{align*}
+D = H,H,T,H,T & \implies x_i = 1,1,0,1,0\\
+P(x=H) = \frac{3}{5} & \implies \bar{x} = \frac{\sum_{i=1}^M{x_i}}{M} = \frac{1+1+0+1+0}{5} = \frac{3}{5} \\
+\text{and } P(x=T) = 1-\frac{3}{5} = \frac{2}{5} & \implies 1-\bar{x} = \frac{2}{5}
+\end{align*}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

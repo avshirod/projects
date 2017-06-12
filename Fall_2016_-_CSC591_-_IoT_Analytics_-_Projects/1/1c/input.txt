@@ -1,0 +1,9 @@
+first_arrival = 0
+mean_inter_arrival_time = 17.98
+service_time = 11
+mean_retransmission_time = 10
+buffer_size = 5
+number_of_repetitions = 50
+max_retransmission_value = 0
+master_clock_limit = 30000
+input_devices = 1000

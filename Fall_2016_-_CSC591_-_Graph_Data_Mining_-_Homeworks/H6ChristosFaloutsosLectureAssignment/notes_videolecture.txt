@@ -1,0 +1,69 @@
+Finding pattern in large graphs (https://www.youtube.com/watch?v=GBzoNgqF-gQ)
+Lecture by Christos Faloustos
+
+
+Require larger data to spot anomalies/rarities, discover patterns
+
+Real graphs are not random - 	six degrees of separation (diameter of graph),
+								in- and out- degree distributions,
+								other patterns in graph
+
+Degree distribution reveals a pattern (Power law)
+Eigenvalues also show a pattern
+
+Other examples of real world graphs where a pattern was observed - 
+web hit counts, epinions.com, duration of downloads, duration of Unix jobs, etc.
+
+Pattern wrt triangles - 
+friends of friends of friends become friends of friends over time. (Triangles close in social networks).
+
+Number of triangles based on degree has strong linear correlation. 
+
+Computing triangles is computationally expensive. (3-way join) (find neighbours. Then find neighbours of neighbours. Then see if neighbours of neighbours are your neighbours.)
+But there's a formula - #Triangles = Sum(eigenvalue^3)/6
+We only need a top few eigenvalues due to skewness of eigenvalue distribution.
+
+
+EigenSpokes = Eigenvectors of adjacency matrix
+Plotting high (nearly 1 million) dimension data of callers and taking SVD eigenvector projection on first two eigenvectors (thus reducing it two two dimensions) gives weird results
+Gives spokes (L-shaped data distribution along principle axes at 90 degree angle), across time and locations
+Same observed in mobile social graphs and patent citation graph
+Reason - High connectivity in clusters (Good communities), same people call each other a lot of times, a dense adjacency matrix
+Eigenspokes is a good method of spotting dense communities in high dimensional data
+
+
+Weighted graphs
+e.g. - Election campaign donations
+A linear pattern observed in number of donors and total amount gathered (Snapshot power law)
+
+
+Time evolving graphs
+(1) Diameter of a graph shrinks as the size of data grows (contradictory with general assumption that diameter would grow in log(n) proportion as size of graph grows)
+(2) As number of nodes doubles in a graph, the number of edges over-doubles (Densification power law)
+(3) Change in disconnected components in time (or second largest connected component)
+	- they grow in size (close friends keep a close circle)
+	- the connected components merge and the shorter one disappears
+	- they stabilize as time passes
+(4) Popularity of blog over time - not exponential; but power law
+
+
+Power law with slope -1.5 has interesting properties
+
+
+Call durations vs Number of calls - TLAC T distribution (TLaC - The Lazy Contractor)
+Graph is in shape of a parabola
+
+
+Oddball - Spotting anomalies in weighted graphs
+For each node, extract ego-get. Then extract some features. And then compare with rest of the population.
+Features selected = degree of node, number of edges in ego-net of node, total weight of ego-net of node, principal eigenvalue of weighted adjacency matrix for ego-net of node
+
+
+Ebay - Fraud detection
+A fraud person creates multiple fake accounts, and gives positive feedback to his own fake accounts, thus falsly identifying himself as a trustworthy seller. How to detect this? This closely connected network between false accounts is similar to a nearly complete bi-partite clique.
+
+
+Immunization using limited number of vaccines 
+Epidemic threshold depends on network connectivity = 1/lambda_1 (the first eigenvalue of the adjacency matrix)
+Strength of virus < threshold, virus dies quickly; else an epidemic
+S = attack prob/healing prob

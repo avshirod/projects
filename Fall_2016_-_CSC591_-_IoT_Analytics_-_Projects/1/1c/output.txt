@@ -1,0 +1,15 @@
+# TASK 1
+As you can see from the results in 'results_s1117.csv', 'output1.txt', and '.csv' files in folder '/task_1',
+we can conclude that as the service time equals the arrival time,
+the total time a request stays in system increases.
+The average delay increases as well, as the queue starts getting full.
+
+The Confidence Interval for both T and D is very close for lower values of service time.
+The 95th percentile for both T and D is pretty higher than mean for those values.
+
+As we have set the arrival rate such that the 1000 events will be approx processed in 5 hours,
+you can see that average P is about 18000 units.
+
+# TASK 2
+As you can see in folder '/task_2', the graph will tell you how the delay decreases exponentially as you start increasing the buffer size.
+The grand mean delay becomes zero when the buffer size exceeds 14.

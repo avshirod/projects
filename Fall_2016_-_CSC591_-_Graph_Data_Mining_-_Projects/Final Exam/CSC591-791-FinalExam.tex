@@ -1,0 +1,234 @@
+%% Based on a TeXnicCenter-Template by Gyorgy SZEIDL.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------
+%
+\documentclass{article}%
+%Options -- Point size:  10pt (default), 11pt, 12pt
+%        -- Paper size:  letterpaper (default), a4paper, a5paper, b5paper
+%                        legalpaper, executivepaper
+%        -- Orientation  (portrait is the default)
+%                        landscape
+%        -- Print size:  oneside (default), twoside
+%        -- Quality      final(default), draft
+%        -- Title page   notitlepage, titlepage(default)
+%        -- Columns      onecolumn(default), twocolumn
+%        -- Equation numbering (equation numbers on the right is the default)
+%                        leqno
+%        -- Displayed equations (centered is the default)
+%                        fleqn (equations start at the same distance from the right side)
+%        -- Open bibliography style (closed is the default)
+%                        openbib
+% For instance the command
+%           \documentclass[a4paper,12pt,leqno]{article}
+% ensures that the paper size is a4, the fonts are typeset at the size 12p
+% and the equation numbers are on the left side
+%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{subfigure,float,wrapfig}
+
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+% ------ GRADING COMMANDS ------ %
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\definecolor{dkgreen}{rgb}{0, 0.75, 0}
+\definecolor{dkred}{rgb}{0.5, 0, 0}
+\definecolor{dkpurp}{rgb}{0.25, 0, 0.5}
+\newcommand{\add}[1]{\textcolor{dkgreen}{#1}}
+\newcommand{\rmv}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\moveto}[1]{\textcolor{blue}{#1}}
+\newcommand{\movefrom}[1]{\textcolor{blue}{\sout{#1}}}
+\newcommand{\highlighttext}[1]{\colorbox{yellow}{#1}}
+\newenvironment{added}{\color{dkgreen}}{\color{black}}
+\newenvironment{removed}{\color{red}}{\color{black}}
+\newenvironment{edited}{\color{blue}}{\color{black}}
+
+\begin{document}
+
+\begin{flushleft}
+\textbf{Course:} CSC591/791, Graph Data Mining: Theory, Algorithms, and Applications\\
+\textbf{Final Exam}: Comprehensive, home-take exam.\\
+\textbf{STUDENT's ID:} \rule{2 in}{1 pt} \\
+\end{flushleft}
+
+
+\noindent{\hrulefill}
+
+\bigskip
+This exam is intended to be an \textbf{individual} effort.  You are allowed to use and reference the materials posted on Moodle, cited in the exam, your homework assignments, your notes, the class slides, and the lecture assignments. You are \textbf{NOT} allowed to use the other sources, such as your classmates and the internet at large.
+
+\begin{center}
+\begin{enumerate}
+	\item Good luck!
+	\item You get BONUS 5 points if your solution is in LaTeX (both source and PDF)
+	\item Otherwise, a PDF (even a scanned hand-written solution) must be uploaded into Moodle
+	\item The Total Exam Score by the TA:  \rule{0.5 in}{1 pt} out of \textbf{(100 points)}
+\end{enumerate}
+\end{center}
+
+\noindent{\hrulefill}
+
+\bigskip
+\textit{From the NCSU Code of Student Conduct:}
+
+\section*{DEFINITIONS OF ACADEMIC DISHONESTY}
+\begin{enumerate}
+\item Academic dishonesty is the giving, taking, or presenting of information or material by a student that unethically or fraudulently aids oneself or another on any work which is to be considered in the determination of a grade or the completion of academic requirements or the enhancement of that student's record or academic career.
+
+\item A student shall be guilty of a violation of academic integrity if he or she:
+\begin{itemize}
+\item represents the work of others as his or her own;
+\item obtains assistance in any academic work from another individual in a situation in which the student is expected to perform independently;
+\item gives assistance to another individual in a situation in which that individual is expected to perform independently;
+\item offers false data in support of laboratory or field work.
+\end{itemize}
+\item The act of submitting work for evaluation or to meet a requirement is regarded as assurance that the work is the result of the student's own thought and study, produced without assistance, and stated in that student's own words, except as quotation marks, references, or footnotes acknowledge the use of other sources. Submission of work used previously must first be approved by the instructor.
+
+\item Regulations regarding academic dishonesty are set forth in writing in order to give students general notice of prohibited conduct. They should be read broadly and are not designed to define academic dishonesty in exhaustive terms.
+
+\item If a student is in doubt regarding any matter relating to the standards of academic integrity in a given course or on a given assignment, that student shall consult with the faculty member responsible for the course before presenting the work.
+\end{enumerate}
+
+By signing this exam, the student acknowledges the above terms and agrees to abide by NCSU policies on academic integrity.
+
+\bigskip
+\noindent Agreed \rule{1in}{1pt} (specify your ID) \hspace{\fill} Date \rule{0.75in}{1pt}
+
+
+\newpage
+\begin{enumerate}
+
+%---------- PROBLEM 1 --------------
+	\item \rule{0.5 in}{1 pt} out of \textbf{(15 points)}: Given an infectious disease following the SIS virus propagation model with transmission probability $\beta=0.3$ and healing probability $\delta=0.5$, in a contact network with 10 nodes and the following edges: \{(0, 1), (0, 3), (1, 4), (2, 3), (2, 6), (5, 6), (5, 7), (6, 7), (7, 9), (8, 9)\}, answer:
+	\begin{enumerate}
+	\item \rule{0.5 in}{1 pt} out of \textbf{(1 point)}: What is the spectral radius of the network?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(1 point)}: What is the effective strength of the virus?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(1 point)}: According to the theorem studied in class [1], can the infection result in an epidemic?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(9 points)}: Using the NetShield algorithm [2], which 3 nodes should be immunized to minimize the spread of the infection?
+	\item \rule{0.5 in}{1 pt} out of \textbf{(3 points)}: After immunizing the 3 nodes selected in (4), can the infection result in an epidemic?
+	\end{enumerate}
+	
+\textbf{References:}	
+\begin{itemize}
+	\item [1] B. A. Prakash, D. Chakrabarti, M. Faloutsos, N. Valler, C. Faloutsos. Got the Flu (or Mumps)? Check the Eigenvalue! arXiv:1004.0060 [physics.soc-ph], 2010.
+	\item [2] H. Tong, B. A. Prakash, C. Tsourakakis, T. Eliassi-Rad, C. Faloutsos, D. H. Chau. On the Vulnerability of Large Graphs. In ICDM, 2010.
+\end{itemize}
+
+
+%---------- PROBLEM 2 --------------
+\item \rule{0.5 in}{1 pt} out of \textbf{(15 points)}: Given random variables $x, y, w, z$, \textbf{prove or disprove} the following statements about their conditional independence ($\bot$) relationships (see the lecture on $D$-separation and example below; if you decide to disprove the stmt, then a counter-example of a DAG will suffice):
+	\begin{enumerate}
+	\item \rule{0.5 in}{1 pt} out of \textbf{(0 points)}: Example: $(x \bot y, w | z) \Longrightarrow (x \bot y | z)$\\
+	\textbf{Proof:} 
+\[\begin{array}{l}
+p(x,y | z) = \sum\limits_w {p(x,y,w|z) = } \sum\limits_w {p(x|z)p(y,w|z) = } \\
+p(x|z)\sum\limits_w {p(y,w|z) = } p(x|z)p(y|z)
+\end{array}\]
+
+	\item \rule{0.5 in}{1 pt} out of \textbf{(6 points)}: $(x \bot y, z) \& (x, y \bot w | z) \Longrightarrow (x \bot w | z)$\\
+	
+%-------------------------
+	\item \rule{0.5 in}{1 pt} out of \textbf{(9 points)}: $(x \bot y, z) \& (x \bot y | w) \Longrightarrow (x \bot y | z, w)$\\
+	
+	\end{enumerate}
+
+	
+%---------- PROBLEM 3 --------------
+  \item \rule{0.5 in}{1 pt} out of (\textbf{15 points}): Suppose you need to design an efficient algorithm for analysizing random walks of an undirected simple graph $G$. Let $A$ be its adjacency matrix with Singular Valude Decomposition (SVD) $A=U\Lambda{U^t}$.
+		\begin{enumerate}
+		\item \rule{0.5 in}{1 pt} out of \textbf{(5 points)}: Prove that the power matrix ${A^k} = U{\Lambda^k}{U^t}$. \\
+		
+		\item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: Devise an efficient algorithm to compute $A^k$ for different values of $k$. What is its Big-O complexity?
+		\end{enumerate}
+			
+			%---------- PROBLEM 4 --------------
+  \item \rule{0.5 in}{1 pt} out of (\textbf{10 points}): Let $G$ be an undirected complete bi-partitie graph. Prove that if $\lambda$ is an eigenvalue of its adjacency matrix then $-\lambda$ is also its eigenvalue. Hint: Assume that after the permutation of rows and columns, the adjacency matrux is of the form:
+	\[A = \left( {\begin{array}{*{20}{c}}
+	0&B\\
+	{{B^t}}&0
+	\end{array}} \right)\]
+	
+
+%----------- PROBLEM 5 ----------------
+  \item \rule{0.5 in}{1 pt} out of (\textbf{20 points}): Consider the following training examples:
+
+   \begin{center}
+   \small
+   \begin{tabular}{|c|ccc|c|} \hline
+   Instance & $x_1$ & $x_2$ & $x_3$ & class, $y$ \\ \hline
+   1 & T & T & T & + \\
+   2 & T & T & T & + \\
+   3 & F & F & T & + \\
+   4 & F & T & F & - \\
+   5 & T & F & T & - \\
+   6 & T & F & F & - \\
+   7 & F & F & F & - \\
+   8 & F & T & F & - \\ \hline
+   \end{tabular}
+   \normalsize
+   \end{center}
+
+    \begin{enumerate}
+    \item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: 
+				You will be using a na\"ive Bayes classifier for this question.
+        Given a test example with attributes $x_1 = T$, $x_2 =
+        T$, and $x_3 = F$, which class will be assigned to this test
+        example? Show your work clearly.
+        
+    \item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: 
+        Repeat the question in part (a) using the following Bayesian Belief
+        network as the classifier:
+\[{x_3} \to {x_2} \to y \to {x_1}\]
+    \end{enumerate}
+
+% ----------------PROBLEM 6-----------------
+ \item \rule{0.5 in}{1 pt} out of (\textbf{10 points}): Show the key steps of the Junction Tree algorithm for the following DAG (Note: No need to show the details of the last step, i.e., the Belief Propagation inference step): 
+\[A \to T \to E\to D; S \to L \to E\to X; S \to B \to D\]
+
+% ----------------PROBLEM 7-----------------
+\item \rule{0.5 in}{1 pt} out of (\textbf{15 points}): Using the Maximum Likelihood estimation, find the parameters for the following Bernoulli Trials problem (show all the derivations):\\
+INPUT: 
+\begin{itemize}
+	\item $M$ iid coin flips: $D={H, H, T, H,...}$
+	\item Model: $p(H) = \theta$ and $p(T)=1-\theta$
+\end{itemize}
+OUTPUT: $\theta _{ML}^* $
+\begin{enumerate}
+		\item \rule{0.5 in}{1 pt} out of \textbf{(10 points)}: What is the likelihood function $l(\theta; D)=\log p(D|\theta)$? (Hint: Introduce a random variable $x$ that is equal to 1 if the trial is a Head and it is equal to zero if the trial is a Tail.) 
+		
+
+		\item \rule{0.5 in}{1 pt} out of \textbf{(5 points)}: What is $\theta _{ML}^* $?\\
+	\end{enumerate}
+	
+
+
+\end{enumerate}
+
+\end{document}

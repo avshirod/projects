@@ -1,0 +1,16 @@
+Read the paper
+
+A ML Technique implement in python, Bayesian regression
+
+Submit 'bitcoin.py'
+
+Python packages
+numpy, pandas, sklearn, statsmodels
+sudo pip install X
+conda install X
+
+Dataset attributes-
+Time in epoch, Price in USD per bitcoin, Bitcoin amt in transaction (Only first two relevant)
+
+Implement the Bayesian Regression model to predict the future price variation of bitcoin as described in the reference paper
+Main parts to focus on are Equation 6 and the Predicting Price Change section.

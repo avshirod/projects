@@ -1,0 +1,10 @@
+first_arrival = 2
+inter_arrival_time = 6
+service_time = 10
+buffer_size = 2
+retransmission_delay = 5
+seed = 0
+number_of_repetitions = 1
+max_retransmission_value = 0
+master_clock_limit = 200
+input_devices = 1000
