@@ -18,9 +18,9 @@ The [data](Data/) was obtained from the US Census Bureau website.
 The Java code used to calculate the statistics can be found [here](Code/).
 
 #### Results
-![Fraction of Population Reidentifiable 2000 Census](/Images/2000%20-%20Results.png)  
+![Fraction of Population Reidentifiable 2000 Census](Images/2000%20-%20Results.png)  
 
-![Fraction of Population Reidentifiable 2010 Census](/Images/2010%20-%20Results.png)  
+![Fraction of Population Reidentifiable 2010 Census](Images/2010%20-%20Results.png)  
 
 Refer to [Images](Images/) for related graphs.
 
