@@ -65,5 +65,5 @@ The fields marked in angular brackets are customizable values, needed to be fill
    - /path/to/the/app/SE-bot = /home/vjayath/SE-Bot
 
 * Run the playbook using this `ansible-playbook -i <inventory file> <playbook-file.yml>`. Below is the screen cast of a playbook in execution.
-![Playbook-example](/images/deploy.gif)
+![Playbook-example](images/deploy.gif)
 * Check the functionality of the bot as described in the [use cases](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/DEPLOY.md).
