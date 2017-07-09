@@ -12,18 +12,18 @@ This updated model will then be used to predict the time it would take to fix a 
 ## Design Sketches
 Wireframe 1: (Showing Github issue page)
 
-![img](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/images/Wireframe%201.PNG)
+![img](images/Wireframe%201.PNG)
 
 Wireframe 2: (Showing Github issue comments page for one of the open issues)
 
-![img](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/images/Wireframe%202.PNG)
+![img](images/Wireframe%202.PNG)
 
 Storyboard:
-![img](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/images/Storyboard.PNG)
+![img](images/Storyboard.PNG)
 
 ## Architecture Design
 Architecture:
-![img](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/images/Architecture.PNG)
+![img](images/Architecture.PNG)
 
 The bot follows the Event Systems Implicit Invocation Architecture.
 We mainly have 3 components in the architecture -

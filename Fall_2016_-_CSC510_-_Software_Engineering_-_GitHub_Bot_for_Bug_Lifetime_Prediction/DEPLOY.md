@@ -16,7 +16,7 @@ This account can be used for Acceptance Testing.
 
 (Alternatively, you can setup the bot with a different account, and make it track a different repository. This requires GitHub API Access tokens for those accounts to be set-up in the config.json file. For instructions, follow [README](https://github.com/CSC-510/Course/blob/master/Project/README.md).)
 
-Visit *[Issues](https://github.com/sebottest/SeleniumTesting/issues)* page in *['SeleniumTesting'](https://github.com/sebottest/SeleniumTesting)* repository to perform acceptance tests for [use cases](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/BOT.md#use-cases).
+Visit *[Issues](https://github.com/sebottest/SeleniumTesting/issues)* page in *['SeleniumTesting'](https://github.com/sebottest/SeleniumTesting)* repository to perform acceptance tests for [use cases](BOT.md#use-cases).
 
 **Use Case 1: (Non-bug Issues creation)**
 
@@ -94,16 +94,16 @@ Any *title* is acceptable.
 #### Screencasts for Functioning Use Cases
 
 Case 1:
-![Use Case 1](/images/scdeploy1.gif)
+![Use Case 1](images/scdeploy1.gif)
 
 Case 2:
-![Use Case 2](/images/scdeploy2.gif)
+![Use Case 2](images/scdeploy2.gif)
 
 Case 3:
-![Use Case 3](/images/scdeploy3.gif)
+![Use Case 3](images/scdeploy3.gif)
 
 Case 4:
-![Use Case 4](/images/scdeploy4.gif)
+![Use Case 4](images/scdeploy4.gif)
 
 Case 4 (Additional Example):
-![Use Case 4](/images/scdeploy5.gif)
+![Use Case 4](images/scdeploy5.gif)

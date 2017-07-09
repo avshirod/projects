@@ -52,7 +52,7 @@ Use Case 4: (Bug issue creation with partial data)
 ### Mocking Service Component
 A mock model is created as the mocking service component (`predictor()` function) in the [bot.js](bot.js) file. The prediction model presented in this milestone is only demonstrative of the way in which it receives information, processes it and returns the prediction, and is not an actual implementation of the predictor.
 
-In order to mock this behavior, we have a template bug example which is created as an issue in [this](https://github.ncsu.edu/adeshka/SE-Bot/) repository. We have employed a webhook which *POSTs* the JSON to our app running reachable as *localhost* .
+In order to mock this behavior, we have a template bug example which is created as an issue in [this](https://github.com/avshirod/projects/tree/master/Fall_2016_-_CSC510_-_Software_Engineering_-_GitHub_Bot_for_Bug_Lifetime_Prediction) repository. We have employed a webhook which *POSTs* the JSON to our app running reachable as *localhost* .
 
 A generic prediction is made using the mock model and posted as a comment on the originating issue.
 
@@ -74,31 +74,31 @@ The above three components together achieves the <b>Bot Platform </b> setup and 
 
 ### Selenium Testing
 The code for the JUnit Tests is in the Selenium directory which can be imported as a Maven project in Eclipse. Since the number of cases are limited for the scope of the bot we have 4 test for the 4 cases the bot needs to consider.
-The Tests are in the file: [SEBotSeleniumTest.java](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/Selenium/src/test/java/UnitTests.java)
+The Tests are in the file: [SEBotSeleniumTest.java](Selenium/src/test/java/UnitTests.java)
 
 
 
 ### Task Tracking
-Refer: [WORKSHEET.md](/WORKSHEET.md)
+Refer: [WORKSHEET.md](WORKSHEET.md)
 
 
 ### ScreenCast
 Case 1:
 
 
-![Working BOT](/images/screencast1.gif)
+![Working BOT](images/screencast1.gif)
 
 Case2:
 
 
-![Working BOT](/images/screencast2.gif)
+![Working BOT](images/screencast2.gif)
 
 Case 3:
 
 
-![Working BOT](/images/screencast3.gif)
+![Working BOT](images/screencast3.gif)
 
 Case 4:
 
 
-![Working BOT](/images/screencast4.gif)
+![Working BOT](images/screencast4.gif)
