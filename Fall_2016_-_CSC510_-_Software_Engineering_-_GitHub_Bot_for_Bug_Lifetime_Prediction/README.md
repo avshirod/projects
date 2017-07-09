@@ -41,7 +41,7 @@ The fields marked in angular brackets are customizable values, needed to be fill
     - `<github-access-token>`: Access token needed make API calls, specific to the said owner.
     - `<port number>`: Port address of the local app. (For example: "3000").
 
-* Fetch the Ansible playbook [file](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/ansible_playbook/setup.yml)
+* Fetch the Ansible playbook [file](ansible_playbook/setup.yml)
 * Setup a Private Public key pair for Ansible to have access to the remote machine. To do this, run the following on your local machine.
     * `ssh-keygen -t rsa`    
     * Press enter (default). The ssh key pair will be stored in `~/.ssh` directory.
@@ -66,4 +66,4 @@ The fields marked in angular brackets are customizable values, needed to be fill
 
 * Run the playbook using this `ansible-playbook -i <inventory file> <playbook-file.yml>`. Below is the screen cast of a playbook in execution.
 ![Playbook-example](images/deploy.gif)
-* Check the functionality of the bot as described in the [use cases](https://github.ncsu.edu/adeshka/SE-Bot/blob/master/DEPLOY.md).
+* Check the functionality of the bot as described in the [use cases](DEPLOY.md).
