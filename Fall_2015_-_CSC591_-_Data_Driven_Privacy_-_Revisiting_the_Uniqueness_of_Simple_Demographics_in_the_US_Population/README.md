@@ -12,17 +12,17 @@ This research was done in 1990, and revisited again by Dr. Golle's [paper](http:
 The amount of personal data being generated has increased multifold over that period, and so have the techniques to prevent/avoid reidentification. We wish to survey and update the results, and verify the impact of current 'Best Practics'.
 
 #### Approach
-The [presentation](/CSC591 Revisiting the Uniqueness of Simple Demographics in the US Population 12-03-2015 Aditya-Kunal.pptx) gives a brief intro to the methods used.  
-A detailed version is mentioned in the [report](/Report.docx).  
-The [data](/data/) was obtained from the US Census Bureau website.  
-The Java code used to calculate the statistics can be found [here](/Code/).
+The [presentation](CSC591%20Revisiting%20the%20Uniqueness%20of%20Simple%20Demographics%20in%20the%20US%20Population%2012-03-2015%20Aditya-Kunal.pptx) gives a brief intro to the methods used.  
+A detailed version is mentioned in the [report](Report.docx).  
+The [data](Data/) was obtained from the US Census Bureau website.  
+The Java code used to calculate the statistics can be found [here](Code/).
 
 #### Results
-![Fraction of Population Reidentifiable 2000 Census](/Images/2000 - Results.png)  
+![Fraction of Population Reidentifiable 2000 Census](/Images/2000%20-%20Results.png)  
 
-![Fraction of Population Reidentifiable 2010 Census](/Images/2010 - Results.png)  
+![Fraction of Population Reidentifiable 2010 Census](/Images/2010%20-%20Results.png)  
 
-Refer to [Images](/Images/) for related graphs.
+Refer to [Images](Images/) for related graphs.
 
 #### Conclusion
 A basic analysis of 2010 Census over three factors {Zip, Age, Gender} over two granularities {Zip Code, County} shows that about 63% of the US population is uniquely identifiable. This result is similar to the 2000 Census results.  
