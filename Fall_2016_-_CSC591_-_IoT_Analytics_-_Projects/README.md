@@ -16,6 +16,7 @@ The projects in class covered basic Data Science and Analytics techniques by usi
 * SVMs
 
 All projects were done in Python. The project descriptions are as follows:
+
 | Topic | Description |
 | :---- | :---------- |
 | Simulation (Queueing Theory) | The project is divided in three subtasks - Simulate by hand, simulate by code, find out optimum buffer size and retransmission time. |
