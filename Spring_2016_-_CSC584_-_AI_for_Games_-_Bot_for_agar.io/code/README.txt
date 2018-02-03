@@ -1,0 +1,13 @@
+To execute the code:
+-Open agar.io in Chrome in fullscreen
+-Use the following game setting:
+	-no skin
+	-no colors
+	-dark theme
+	-no names
+-ideal screen resolution 1280x720
+-complie code using "javac agar/AgarBot.java"
+-execute code using "java agar/AgarBot"
+-switch to Chrome and start game within 5seconds
+-the bot will then start running
+-stop the bot by accessing terminal and force stop the execution
